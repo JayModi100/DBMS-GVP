@@ -1,2 +1,6 @@
 11.
  ==> SELECT p.pname , sum(sp.qty) FROM sp,p WHERE sp.pno = p.pno GROUP BY sp.pno;
+
+
+12. 
+ ==> select s.sno,s.sname,s.s_status,s.s_city,sum(sp.qty) from s,sp WHERE s.sno = sp.sno AND sp.sno < 's4' GROUP BY s.sno;
