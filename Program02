@@ -1,0 +1,21 @@
+1. Show all the parts Located at London city:
+	=> SELECT * from p WHERE p_city = 'London';
+
+	2. Show Maximum Weight part name
+	=> SELECT pname as 'Part Name' FROM p ORDER BY weight DESC LIMIT 1;
+
+	=> SELECT pname AS 'Part Name' from p WHERE weight = (SELECT MAX(weight) from p);
+
+	3. Show all Parts name,part number for part color = 'Red'
+	=> SELECT pname as 'Part Name',pno as 'Part No' from p WHERE color = 'Red';
+
+	4. show suppler name, suppler city who supply part qty more than 200
+	=> SELECT DISTINCT(s.sname),s.s_city from s ,sp where sp.sno = s.sno AND sp.qty > 200;
+
+	5. show second hightest weight of part.
+	==> SELECT DISTINCT(weight) FROM p ORDER BY weight DESC LIMIT 1 OFFSET 1;
+
+	=> SELECT MAX(weight) FROM p WHERE weight < (SELECT MAX(weight) FROM p);
+
+	+> Find all the record of second highest.
+	   SELECT * FROM p WHERE weight = (SELECT DISTINCT(weight) FROM p ORDER BY weight DESC LIMIT 1 OFFSET 1);
