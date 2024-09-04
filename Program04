@@ -1,0 +1,2 @@
+11.
+ ==> SELECT p.pname , sum(sp.qty) FROM sp,p WHERE sp.pno = p.pno GROUP BY sp.pno;
