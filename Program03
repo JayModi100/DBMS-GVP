@@ -1,0 +1,30 @@
+1. Show the suppler no and qty for part supply for highest weight part.
+	=> SELECT sp.sno ,sp.qty from sp,p where sp.pno = p.pno ORDER BY p.weight DESC LIMIT 1;
+
+	2. Show the suppler name and qty for part color is "Red" supply
+	=> SELECT s.sname,sp.qty 
+		from s,p,sp 
+    		WHERE s.sno = sp.sno AND
+   		sp.pno = p.pno AND
+    		p.color = "Red"
+
+	==> SELECT s.sname,sum(sp.qty) from s,p,sp WHERE s.sno = sp.sno AND sp.pno = p.pno AND p.color = "Red" GROUP BY s.sname; 
+
+	3. 
+	=> SELECT s.sname,p.p_city,sp.qty 
+		FROM s,p,sp 
+    		WHERE p.pno = sp.pno AND 
+    		sp.sno = s.sno AND 
+    		s.s_status < 30
+
+	==>
+
+	4. 
+	=> SELECT sp.sno,SUM(sp.qty) 
+		from sp  
+    		GROUP BY sp.sno
+
+	5.
+	=> SELECT pno,sum(qty) 
+		from sp 
+    		GROUP BY pno;
