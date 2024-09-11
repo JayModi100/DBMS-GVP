@@ -4,3 +4,6 @@
 
 12. 
  ==> select s.sno,s.sname,s.s_status,s.s_city,sum(sp.qty) from s,sp WHERE s.sno = sp.sno AND sp.sno < 's4' GROUP BY s.sno;
+
+13.
+==> SELECT s.sno,s.sname,s.s_status,s.s_city,sum(sp.qty) from s,sp where sp.sno = s.sno and s.s_status = 20 GROUP BY s.sno;
