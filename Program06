@@ -1,2 +1,6 @@
 1.
-==>
+==> SELECT emp.emp_name as "Emp Name", dept.dept_name as "Emp Department", boss.emp_name as "Boss name" ,bdept.dept_name from emp,dept,emp as boss ,dept as bdept WHERE dept.dept_id = emp.emp_dept_id and boss.emp_id = emp.emp_boss_id and bdept.dept_id = boss.emp_dept_id;
+
+
+2.
+==> 
